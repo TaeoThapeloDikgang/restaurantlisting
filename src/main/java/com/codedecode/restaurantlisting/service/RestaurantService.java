@@ -18,7 +18,7 @@ public class RestaurantService {
     @Autowired
     RestaurantRepo restaurantRepo;
 
-    public List<RestaurantDTO> finalAllRestaurants() {
+    public List<RestaurantDTO> findAllRestaurants() {
         List<Restaurant> restaurants = restaurantRepo.findAll();
         return restaurants.stream().map(res -> RestaurantMapper.INSTANCE.mapRestaurantToRestaurantDTO(res)).toList();
     }

@@ -1,7 +1,6 @@
 package com.codedecode.restaurantlisting.controller;
 
 import com.codedecode.restaurantlisting.dto.RestaurantDTO;
-import com.codedecode.restaurantlisting.entity.Restaurant;
 import com.codedecode.restaurantlisting.service.RestaurantService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -26,7 +25,7 @@ public class RestaurantController {
 
     @GetMapping("/fetchAllRestaurants")
     public ResponseEntity<List<RestaurantDTO>> fetchAllRestaurants() {
-        List<RestaurantDTO> allRestaurants = restaurantService.finalAllRestaurants();
+        List<RestaurantDTO> allRestaurants = restaurantService.findAllRestaurants();
         return new ResponseEntity<>(allRestaurants, HttpStatus.OK);
     }
 
